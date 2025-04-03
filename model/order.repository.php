@@ -1,5 +1,4 @@
-<!--  je crée une fonction "createOrder" qui 
- prend en parametre un produit et une quantity et qui créé un tableau $order et le retourne 
+
  je crée  une fonction "saveOrder" 
  qui prend en parametre un order et le sauve dans la session-->
 
@@ -16,6 +15,10 @@ function findOrderByUser() {
 	}
 }
 
+// <!--  je crée une fonction "createOrder" qui 
+//  prend en parametre un produit et une quantity et qui créé un tableau $order et le retourne 
+
+
 function createOrder($product, $quantity) {
 	$order = [
 		"product" => $product,
@@ -24,6 +27,10 @@ function createOrder($product, $quantity) {
 
 	return $order;
 }
+
+// je crée  une fonction "saveOrder" 
+//  qui prend en parametre un order et le sauve dans la session-->
+
 
 
 function saveOrder($order) {
