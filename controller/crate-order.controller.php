@@ -1,6 +1,7 @@
 <?php
 
 require_once('../config.php');
+// 
 require_once('../model/order.repository.php');
 
 
@@ -12,14 +13,14 @@ if (array_key_exists("quantity", $_POST) &&
 	array_key_exists("product", $_POST))
 {
 	
-	// Dans le controleur, utilisez ces deux fonctions pour remplacer le code qui créé et sauve la commande
+	
 
 
 	$order = createOrder($_POST['product'], $_POST['quantity']);
 	saveOrder($order);
 }
 
-	
+	// j' utilise ces deux fonctions pour remplacer le code qui créé et sauve la commande
 $orderByUser = findOrderByUser();
 
 
