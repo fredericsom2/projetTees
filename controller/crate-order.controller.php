@@ -1,7 +1,6 @@
 <?php
 
 require_once('../config.php');
-// 
 require_once('../model/order.repository.php');
 
 
@@ -21,7 +20,13 @@ if (array_key_exists("quantity", $_POST) &&
 }
 
 	// j' utilise ces deux fonctions pour remplacer le code qui créé et sauve la commande
+	// Dans votre controleur, appelez cette fonction et stockez le résultat dans une variable
 $orderByUser = findOrderByUser();
+
+
+
+
+
 
 
 
@@ -32,7 +37,6 @@ require_once('../view/create-order.view.php');
 
 
 // le controleur : 
-
 // récupère les données de requête (GET, POST etc etc)
 // appelle le(s) répository pour récupérer les données (bdd, session)
 // créé des variables / fonctions etc, pour simplifier l'utilisation des données dans la view

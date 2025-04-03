@@ -13,6 +13,13 @@
 		<nav>
 			<ul>
 				<li>Créer une commande</li>
+
+	<!-- utilisez la variable dans la view pour afficher la commande de l'utilisateur : -->
+	<?php if ($orderByUser) { ?>
+         <h1><?php echo $orderByUser["quantity"]; ?> : 
+		 <?php echo $orderByUser["product"]; ?>
+    <?php } ?>
+		</h1>
 			</ul>
 		</nav>
 
@@ -20,13 +27,15 @@
 
 	<main>
 
-
 	<?php if (array_key_exists("order", $_SESSION)) { ?>
-		<!-- je 
-		 
-		récupere ma commande -->
+		<!-- je récupere ma commande -->
 		<p>Vous avez une commande en attente : <?php echo $_SESSION["order"]["quantity"]; ?> : <?php echo $_SESSION["order"]["product"]; ?></p>
 	<?php } ?>
+
+
+
+	
+
 
 
 
