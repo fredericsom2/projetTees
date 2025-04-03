@@ -19,7 +19,12 @@
          <h1><?php echo $orderByUser["quantity"]; ?> : 
 		 <?php echo $orderByUser["product"]; ?>
     <?php } ?>
+
+
+	
 		</h1>
+		<!-- message de renvoi : impossible de creer la commande -->
+		<?php echo $message; ?>
 			</ul>
 		</nav>
 

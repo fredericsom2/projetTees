@@ -8,15 +8,21 @@ require_once('../model/order.repository.php');
 // et envoie l'identifiant au navigateur qui le stocke en cookie
 session_start();
 
+// je crée une variable message qui s'affichera 
+$message="";
+
 if (array_key_exists("quantity", $_POST) && 
 	array_key_exists("product", $_POST))
 {
-	
-	
-
-
 	$order = createOrder($_POST['product'], $_POST['quantity']);
-	saveOrder($order);
+	// si la commande corresponde à la regle : 
+	if ($order){
+		saveOrder($order); 
+		// sinon il s'affichera ce message
+	} else {
+		$message = " impossible de creer la commande";
+	}
+	
 }
 
 	// j' utilise ces deux fonctions pour remplacer le code qui créé et sauve la commande
