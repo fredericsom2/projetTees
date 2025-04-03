@@ -18,6 +18,10 @@
 	<?php if ($orderByUser) { ?>
          <h1><?php echo $orderByUser["quantity"]; ?> : 
 		 <?php echo $orderByUser["product"]; ?>
+		 <!-- je crée un message qui montre la date de commande -->
+
+
+		 <p>créée le <?php echo $orderByUser ['createdAt']-> format('y-m-d'); ?>   </p> 
     <?php } ?>
 
 
@@ -25,6 +29,8 @@
 		</h1>
 		<!-- message de renvoi : impossible de creer la commande -->
 		<?php echo $message; ?>
+		
+		  
 			</ul>
 		</nav>
 

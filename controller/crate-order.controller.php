@@ -14,13 +14,15 @@ $message="";
 if (array_key_exists("quantity", $_POST) && 
 	array_key_exists("product", $_POST))
 {
-	$order = createOrder($_POST['product'], $_POST['quantity']);
-	// si la commande corresponde à la regle : 
-	if ($order){
-		saveOrder($order); 
-		// sinon il s'affichera ce message
-	} else {
-		$message = " impossible de creer la commande";
+
+// try : contient le code qui pourrait generer une exeption
+//  catch : capture l'exception et permet de la traiter sans interrompre l'execution du programme
+	try{
+		$order = createOrder($_POST['product'], $_POST['quantity']);
+		saveOrder($order);
+	} catch(Exception $e) {
+		$message = $e->getMessage();
+		
 	}
 	
 }
