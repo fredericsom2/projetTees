@@ -1,21 +1,56 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
 </head>
+<link rel="stylesheet" href="../css/style.css">
 <body>
-    <!-- je crée un titre au formulaire  -->
-    <h1>Formulaire</h1>
-    <!--  je crée un formulaire  -->
-    
-    <form method="post" action="">
-        <label for="quantity">Quantité :</label>
-        <input type="submit" name="submit" value="Envoyer">
-    </form>
 
-   
-    
+	<header>
+
+		<nav>
+			<ul>
+				<li>Créer une commande</li>
+			</ul>
+		</nav>
+
+	</header>
+
+	<main>
+
+
+	<?php if (array_key_exists("order", $_SESSION)) { ?>
+		<!-- je 
+		 
+		récupere ma commande -->
+		<p>Vous avez une commande en attente : <?php echo $_SESSION["order"]["quantity"]; ?> : <?php echo $_SESSION["order"]["product"]; ?></p>
+	<?php } ?>
+
+
+
+		<form method="POST" >
+
+			<label for="quantity">Quantity
+				<input type="number" name="quantity" />
+			</label>
+
+			<label for="product">
+				<select name="product">
+
+				<!-- JE crée une boucle  -->
+					<?php foreach ($products as $product) { ?>
+						<option value="<?php echo $product; ?>"><?php echo $product; ?></option>
+					<?php } ?>
+				</select>
+			</label>
+
+			<button type="submit">Créer la commande</button>
+
+		</form>
+
+	</main>
+
 </body>
 </html>
