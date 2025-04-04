@@ -22,9 +22,7 @@ if (array_key_exists("quantity", $_POST) &&
 		saveOrder($order);
 	} catch(Exception $e) {
 		$message = $e->getMessage();
-		
 	}
-	
 }
 
 	// j' utilise ces deux fonctions pour remplacer le code qui créé et sauve la commande

@@ -22,6 +22,8 @@
 
 
 		 <p>créée le <?php echo $orderByUser ['createdAt']-> format('y-m-d'); ?>   </p> 
+		 <p>Votre commande est en statut :<?php echo $orderByUser["status"
+		]; ?> </p>
     <?php } ?>
 
 

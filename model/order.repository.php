@@ -36,7 +36,8 @@ function createOrder($product, $quantity) {
 	$order = [
 		"product" => $product,
 		"quantity" => $quantity, 
-        "createdAt" => new DateTime()   //  pour afficher la date de commande
+        "createdAt" => new DateTime(),  //  pour afficher la date de commande
+		"status" => "CART"
 	];
 
 	return $order;
