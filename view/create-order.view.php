@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-</head>
-<link rel="stylesheet" href="../css/style.css">
-<body>
 
-	<header>
 
-		<nav>
-			<ul>
-				<li>Créer une commande</li>
+		
+	<?php
+require_once('../view/header.php');?>	
 
 	<!-- utilisez la variable dans la view pour afficher la commande de l'utilisateur : -->
 	<?php if ($orderByUser) { ?>
